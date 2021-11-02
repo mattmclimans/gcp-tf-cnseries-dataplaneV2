@@ -1,6 +1,7 @@
 # ----------------------------------------------------------------------------
 #  variables - main.tf
 variable "project" {
+  default     = null 
   type        = string
   description = "The GCP project ID"
 }

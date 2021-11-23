@@ -1,7 +1,7 @@
 #project                  = ""                               # Your GCP project ID
 panorama_ip              = "<your_panorama_ip>"             # Panorama IP address
 panorama_auth_key        = "<your_panorama_vm_auth_key>"    # Panorama authkey for CN-Series connection
-k8s_enable_dpv2          = false
+k8s_enable_dpv2          = true
 k8s_version              = "1.21.3-gke.2001"
 
 # ---------------------------------------------------

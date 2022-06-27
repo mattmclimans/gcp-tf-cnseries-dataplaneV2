@@ -6,11 +6,17 @@ provider "google" {
 }
 
 locals {
-  prefix = var.prefix != null && var.prefix != "" ? "${var.prefix}-" : ""
+  prefix = var.prefix != null && var.prefix != "" ? "${var.prefix}-${random_string.main.result}" : "${random_string.main.result}-"
 }
 
 
 data "google_client_config" "main" {}
+
+resource "random_string" "main" {
+  length      = 5
+  min_lower   = 5
+  special     = false
+}
 
 module "vpc" {
   source       = "terraform-google-modules/network/google"

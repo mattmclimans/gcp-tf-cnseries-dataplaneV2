@@ -12,7 +12,7 @@ variable "region" {
 
 variable "prefix" {
   description = "Prefix to add before resource names"
-  default     = ""
+  #default     = "mrm"
 }
 
 # ----------------------------------------------------------------------------

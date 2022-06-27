@@ -6,7 +6,7 @@ provider "google" {
 }
 
 locals {
-  prefix = var.prefix != null && var.prefix != "" ? "${var.prefix}-${random_string.main.result}" : "${random_string.main.result}-"
+  prefix = var.prefix != null && var.prefix != "" ? "${var.prefix}-" : ""
 }
 
 

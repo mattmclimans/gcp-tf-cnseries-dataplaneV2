@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trust
+  annotations: {
+    paloaltonetworks.com/firewall: pan-fw
+  }
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-trust
+  labels:
+    app: centos-trust
+  namespace: trust
+spec:
+  containers:
+  - image: centos:7
+    command:
+      - "sleep"
+      - "2592000"
+    imagePullPolicy: IfNotPresent
+    name: centos
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dmz
+  annotations: {
+    paloaltonetworks.com/firewall: pan-fw
+  }
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-dmz
+  labels:
+    app: centos-dmz
+  namespace: dmz
+spec:
+  containers:
+  - image: centos:7
+    command:
+      - "sleep"
+      - "2592000"
+    imagePullPolicy: IfNotPresent
+    name: centos
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: qa
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-qa
+  labels:
+    app: centos-qa
+  namespace: qa
+spec:
+  containers:
+  - image: centos:7
+    command:
+      - "sleep"
+      - "2592000"
+    imagePullPolicy: IfNotPresent
+    name: centos
+  restartPolicy: Always

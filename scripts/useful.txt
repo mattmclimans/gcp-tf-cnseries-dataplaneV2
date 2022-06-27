@@ -1,0 +1,8 @@
+# get Ip addresses
+kubectl get pods -o wide --all-namespaces
+
+Access application pod1 in namespace trust:
+kubectl exec -it -n trust centos-trust -- su
+
+Access application pod2 in namespace dmz: 
+kubectl exec -it -n dmz centos-dmz -- su

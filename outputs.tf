@@ -7,6 +7,6 @@ output "cluster_name" {
   value = google_container_cluster.cluster.name
 }
 
-output "run_this_to_authenticate_to_cluster" {
+output "authenticate_to_cluster" {
   value = "gcloud container clusters get-credentials ${google_container_cluster.cluster.name} --region ${var.region} --project ${data.google_client_config.main.project}"
 }
